@@ -1,7 +1,31 @@
 #include <iostream>
+#include "Adc.hpp"
 
-/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+/*VARIABLES GLOBALES*/
+//int Adc::n_analog = 0;
+int Adc::_reso=0;
+int Adc::_freq=0;
 
-int main(int argc, char** argv) {
+	
+//FUNCION MAIN
+int main() {
+	int n,i;
+	Adc::setReso();
+	Adc::setFreq();
+	cout<<"Introduce el numero de canales a leer: ";
+	cin>>n;
+	Adc c[n];
+	
+	for(i=0;i<n;i++){	 //DEFINICION DEL CANAL
+		c[i].captura();	
+	}
+	
+	for(i=0;i<n;i++){ //Impresion de datos
+		c[i].print();	
+	}
+	
+	for(i=0;i<n;i++){ //Impresion de datos
+		c[i].lectura();	
+	}	
 	return 0;
 }

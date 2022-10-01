@@ -10,6 +10,7 @@ int Adc::_freq=0;
 //FUNCION MAIN
 int main() {
 	int n,i;
+	cout<<"CONFIGURACION DE UN ADC"<<endl;
 	Adc::setReso();
 	Adc::setFreq();
 	cout<<"Introduce el numero de canales a leer: ";
